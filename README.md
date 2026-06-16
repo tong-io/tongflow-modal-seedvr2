@@ -15,5 +15,6 @@ Add in TongFlow **Settings** (gear icon, top-right):
 | --- | --- | --- |
 | `MODAL_TOKEN_ID` | ✅ | Create at [modal.com/settings/tokens](https://modal.com/settings/tokens). |
 | `MODAL_TOKEN_SECRET` | ✅ | Paired with `MODAL_TOKEN_ID`. |
+| `HF_TOKEN` | Optional | Only helps avoid Hugging Face rate limits; SeedVR2 weights are public. |
 
-On first use the plugin deploys to your Modal account automatically and caches the build. The SeedVR2 weights are public; an `HF_TOKEN` (via Modal secret `huggingface`) is optional and only helps avoid Hugging Face rate limits.
+On first use the plugin deploys to your Modal account automatically and caches the build. If set in Settings, `HF_TOKEN` is injected into the Modal download job at deploy time — no manual `modal secret create` needed.

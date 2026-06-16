@@ -33,12 +33,12 @@ model_downloader = modal.App("model_downloader")
     .pip_install("huggingface_hub>=0.34.0,<1.0"),
     volumes={"/models": volume},
     timeout=7200,
-    secrets=[modal.Secret.from_name("huggingface")],
+    secrets=[modal.Secret.from_dict({"HF_TOKEN": os.environ.get("HF_TOKEN", "")})],
 )
 def _download() -> None:
     from huggingface_hub import snapshot_download
 
-    token = os.environ.get("HF_TOKEN")
+    token = os.environ.get("HF_TOKEN") or None
     patterns = ["*.pth", "*.pt", "*.json", "*.md", "*.txt"]
     for repo_id in (HF_REPO_3B, HF_REPO_7B):
         local_dir = f"/models/{repo_id}"
