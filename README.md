@@ -1,6 +1,6 @@
 # tongflow-modal-seedvr2
 
-Official TongFlow plugin. Image and video super-resolution with **SeedVR2** (`ByteDance-Seed/SeedVR2-3B` by default, `SeedVR2-7B` via `SEEDVR2_MODEL_SIZE=7b`), running on a GPU via [Modal](https://modal.com).
+Official [TongFlow](https://github.com/tong-io/tongflow) plugin. Image and video super-resolution with **SeedVR2** (`ByteDance-Seed/SeedVR2-3B` by default, `SeedVR2-7B` via `SEEDVR2_MODEL_SIZE=7b`), running on a GPU via [Modal](https://modal.com).
 
 ## Capabilities
 
